@@ -40,7 +40,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/auth/**").permitAll() // Allow signup and login
+                .requestMatchers("/","/auth/**").permitAll() // Allow signup and login
                 .anyRequest().authenticated() // All other endpoints require authentication
             )
             .sessionManagement(session -> session
